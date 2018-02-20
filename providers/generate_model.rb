@@ -12,7 +12,7 @@ action :backup do
   template "#{new_resource.base_dir}/models/#{new_resource.name}.rb" do
     mode 0600
     source new_resource.options["source"] || "generic_model.conf.erb"
-    cookbook new_resource.options["cookbook"] || "backup"
+    cookbook new_resource.options["cookbook"] || "backup_lwrp"
     variables({
                 :name => new_resource.name,
                 :options => new_resource.options,
